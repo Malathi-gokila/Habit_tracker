@@ -1,0 +1,114 @@
+/* src/pages/HomePage.css */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 120px); /* Adjust based on navbar/footer height */
+    padding: 2rem;
+    text-align: center;
+    /* Example gradient background */
+    /* background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); */
+    background-color: var(--background-accent);
+    color: #732452; /* Dark Indigo text */
+  }
+  
+  .home-header {
+      margin-bottom: 2.5rem;
+      animation: fadeInDown 1s ease-out; /* Simple entry animation */
+  }
+  
+  .home-header h1 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem); /* Responsive font size */
+    color: var(--text-primary); /* Deep indigo */
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  .tagline {
+    font-size: clamp(1.1rem, 3vw, 1.5rem); /* Responsive font size */
+    color: var(--text-secondary); /* Indigo */
+    margin-bottom: 0; /* Removed margin as header has bottom margin */
+    font-weight: 400;
+     opacity: 0.9;
+  }
+  
+  .home-content {
+      animation: fadeInUp 1s ease-out 0.5s; /* Delayed entry animation */
+      animation-fill-mode: backwards; /* Apply start state before animation */
+  }
+  
+  .home-content p {
+    font-size: clamp(1rem, 2.5vw, 1.15rem); /* Responsive font size */
+    color: var(--text-accent); /* Gray */
+    max-width: 650px;
+    line-height: 1.7;
+    margin: 0 auto 2.5rem auto; /* Center the paragraph */
+  }
+  
+  .home-actions {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  /* Reusable Button Styles (you might move these to a global CSS file) */
+  .btn {
+    display: inline-block; /* Needed for transform */
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .btn-primary {
+    background-color: #6366f1; /* Indigo */
+    color: white;
+  }
+  .btn-primary:hover {
+    background-color: #4f46e5; /* Darker Indigo */
+    transform: translateY(-3px);
+    color:white;
+    box-shadow: 0 6px 12px rgba(99, 102, 241, 0.3);
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    color: #4f46e5; /* Indigo */
+    border: 2px solid #6366f1; /* Indigo border */
+  }
+  .btn-secondary:hover {
+    background-color: #f0f1ff; /* Very light indigo */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Basic Keyframe Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+     from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

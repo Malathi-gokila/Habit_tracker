@@ -1,0 +1,75 @@
+.progress-bar-container {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .progress-bar-label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 0.3rem;
+    color:var(--text-on-accent);
+  }
+  
+  .progress-bar-background {
+    height: 20px;
+    background-color: #e0e0e0; /* Light grey background */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative; /* Needed for text positioning */
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, #667eea, #764ba2); /* Indigo/Purple gradient */
+    border-radius: 10px 0 0 10px; /* Keep left radius */
+    transition: width 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align text to the right of the fill */
+     color: white;
+     font-size: 0.8em;
+     font-weight: bold;
+  }
+  /* Only show border radius on the right when full */
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, #667eea, #764ba2); /* Indigo/Purple gradient */
+    border-radius: 10px 0 0 10px;
+    /* Enhance the transition */
+    transition: width 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); /* Slower, smoother ease */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    box-shadow: 0 0 8px 2px rgba(118, 75, 162, 0.5);
+  }
+  
+  /* Add a temporary "flash" or "glow" class if you implement Option B from thoughts */
+  .progress-bar-fill.level-up-flash {
+      animation: levelUpGlow 1s ease-out;
+  }
+  
+  .progress-bar-text {
+    padding: 0 10px;
+    position: absolute; /* Position relative to container */
+     left: 10px; /* Position text starting from left */
+     line-height: 20px; /* Center vertically */
+     color: #fff; /* White text */
+     mix-blend-mode: difference; /* Makes text visible on background and fill */
+     font-weight: bold;
+     font-size: 0.8em;
+  }
+  
+  /* Optional: Style for 100% differently if needed */
+  .progress-bar-fill[style*="width: 100%"] .progress-bar-text {
+     /* Adjust if needed when 100% */
+     color: #fff;
+     mix-blend-mode: normal; /* Normal color on full bar */
+  }
+
+  @keyframes levelUpGlow {
+    0%, 100% { box-shadow: 0 0 8px 2px rgba(118, 75, 162, 0.5); }
+    50% { box-shadow: 0 0 16px 6px rgba(245, 208, 255, 0.7); }
+}

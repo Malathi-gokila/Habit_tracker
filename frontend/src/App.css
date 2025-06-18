@@ -1,0 +1,207 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* Define variables for the LIGHT theme (default) */
+:root, html.light {
+  --background-primary:url(../public/images/pastel-aesthetic-background-Graphics-30684243-1.jpg); /* Very light gray */
+  --background-secondary: rgba(105, 7, 46, 0.7); /* White (for cards, modals) */
+  --background-accent: rgba(230, 170, 253, 0.7); /* Light indigo */
+  --container-primary:rgba(241, 115, 167, 0.7);
+  --container-secondary:White;
+  --container-accent:rgba(241, 115, 167, 0.7);
+  --text-primary: #031227;      /* Dark gray */
+  --text-secondary: #000;    /* Medium gray */
+  --text-accent: #72110b;       /* Indigo */
+  --text-on-accent: #000000;    /* White text on accent background */
+  --border-color: #e5e7eb;      /* Light gray border */
+  --border-color-accent: #c7d2fe; /* Lighter indigo border */
+  --shadow-color: rgba(0, 0, 0, 0.07);
+  --link-color: #4f46e5;
+  --button-primary-bg: #6366f1;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #ffffff;
+  --button-secondary-text: #4f46e5;
+  --button-secondary-border: #6366f1;
+  --success-bg: #f0fdf4;        /* Light green */
+  --success-text: #065f46;       /* Dark green */
+  --success-border: #a7f3d0;
+  --error-bg: #fee2e2;          /* Light red */
+  --error-text: #991b1b;         /* Dark red */
+  --error-border: #fca5a5;
+  --warn-bg: #fef9c3;           /* Light yellow */
+  --warn-text: #854d0e;          /* Dark yellow */
+  --info-bg: #eff6ff;           /* Light blue */
+  --info-text: #1e40af;          /* Dark blue */
+
+  /* Add transitions for smooth theme change */
+  color-scheme: light; /* Inform browser about the scheme */
+}
+
+/* Define variables for the DARK theme */
+html.dark {
+  --background-primary: url(../public/images/dark.jpg);   /* Very dark gray/blue */
+  --background-secondary: rgba(13, 11, 32, 0.7);  /* Dark gray/blue (cards) */
+  --background-accent: rgba(0,0,0,0.7);    /* Darker Indigo */
+  --container-primary:rgba(0, 0, 0, 0.7);
+  --container-secondary:rgba(6, 2, 40, 0.537);
+  --text-primary: #66f187;       /* Light gray/off-white */
+  --text-secondary: #9bbdf8;     /* Lighter gray */
+  --text-accent: #ffffff;        /* Lighter Indigo */
+  --text-on-accent: #ffffff;     /* White */
+  --border-color: #374151;       /* Medium Gray border */
+  --border-color-accent: #4f46e5;  /* Indigo border */
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --link-color: #818cf8;
+  --button-primary-bg: #818cf8;
+  --button-primary-text: #111827;
+  --button-secondary-bg: #374151;
+  --button-secondary-text: #f9fafb;
+  --button-secondary-border: #4b5563;
+  --success-bg: #064e3b;        /* Darker Green */
+  --success-text: #a7f3d0;       /* Lighter Green */
+  --success-border: #10b981;
+  --error-bg: #7f1d1d;          /* Darker Red */
+  --error-text: #fecaca;         /* Lighter Red */
+  --error-border: #ef4444;
+  --warn-bg: #713f12;           /* Darker Yellow */
+  --warn-text: #fef08a;          /* Lighter Yellow */
+  --info-bg: #1e40af;           /* Darker Blue */
+  --info-text: #bfdbfe;          /* Lighter Blue */
+
+  color-scheme: dark; /* Inform browser about the scheme */
+}
+
+/* Apply base styles using variables */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', /* ... other fonts */;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: var(--background-primary);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  z-index: -1;
+  color: var(--text-primary);
+  /* Add transition for smoother theme changes */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure links use variable */
+a {
+    color: var(--link-color);
+}
+
+/* Style scrollbar for dark mode (optional, Webkit only) */
+html.dark ::-webkit-scrollbar {
+    width: 8px;
+}
+html.dark ::-webkit-scrollbar-track {
+    background: var(--background-secondary);
+}
+html.dark ::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+    border: 2px solid var(--background-secondary);
+}
+
+
+
+
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://www.creativefabrica.com/wp-content/uploads/2022/05/17/pastel-aesthetic-background-Graphics-30684243-1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  z-index: -1;
+  color: #1f2937;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+} */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100vh;
+  margin: 0 auto;
+}
+
+.main-content {
+  flex-grow: 1;
+  /* Padding can be added here or within specific page containers */
+   /* Example: padding: 1rem; */
+}
+
+/* Simple loading indicator style */
+.loading-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjust based on Navbar height */
+    font-size: 1.5em;
+    color: #666;
+}

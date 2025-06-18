@@ -1,0 +1,83 @@
+.dashboard-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background-color: var(--container-primary); /* Light background */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dashboard-container h1 {
+    text-align: center;
+    color: var(--text-accent); /* Deep indigo */
+    margin-bottom: 1.5rem;
+    font-size: 2em;
+  }
+  
+  .user-stats {
+    background-color: var(--container-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    color:white;
+  }
+  
+  .level-badge {
+    display: inline-block;
+    background-color: #facc15; /* Yellow */
+    color: #713f12; /* Dark yellow text */
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+  }
+  
+  .habit-list {
+    margin-top: 1.5rem;
+  }
+  
+  .loading {
+      text-align: center;
+      padding: 3rem;
+      font-size: 1.2em;
+      color: #666;
+  }
+  
+  .error-message {
+      color: #ef4444; /* Red */
+      background-color: #fee2e2; /* Light red background */
+      padding: 0.8rem;
+      border-radius: 4px;
+      border: 1px solid #fca5a5; /* Red border */
+      text-align: center;
+  }
+  
+  /* Achievements Preview */
+  .achievements-preview {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb; /* Separator */
+  }
+  .achievements-preview h3 {
+      font-size: 1em;
+      color:var(--text-on-accent);
+      margin-bottom: 0.5rem;
+  }
+  .achievements-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+  }
+  .achievements-list li {
+      background-color: #e0e7ff; /* Light indigo background */
+      color: #3730a3; /* Indigo text */
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.85em;
+  }

@@ -1,0 +1,186 @@
+/* src/pages/ChallengesPage.css */
+.challenges-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+  }
+  
+  .challenges-container h1 {
+    text-align: center;
+    color: #4338ca; /* Deep indigo */
+    margin-bottom: 2rem;
+  }
+  
+  .loading-text,
+  .no-challenges {
+      text-align: center;
+      color: #6b7280;
+      font-style: italic;
+      padding: 2rem;
+  }
+  /* Use existing .error-message style */
+  
+  .challenges-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .challenge-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items top */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #a5b4fc; /* Default light indigo border */
+    position: relative;
+  }
+  
+  .challenge-item.in-progress:hover {
+      border-color: #6366f1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .challenge-item.completed {
+      border-left-color: #34d399; /* Green border for completed */
+      opacity: 0.8;
+      background-color: #f0fdf4; /* Light green background */
+  }
+  
+  .challenge-item.status-upcoming {
+    border-left-color: #fbbf24; /* Amber border for upcoming */
+    opacity: 0.7;
+}
+.challenge-item.status-expired {
+     border-left-color: #9ca3af; /* Gray border for expired */
+     opacity: 0.6;
+     background-color: #f3f4f6; /* Lighter gray background */
+}
+ .challenge-item.status-expired .challenge-info h3,
+ .challenge-item.status-expired .challenge-info p,
+ .challenge-item.status-expired .progress-text {
+     color: #6b7280; /* Muted text color */
+ }
+ .challenge-item.status-expired .challenge-rewards span {
+     opacity: 0.7;
+ }
+
+  
+  .challenge-info {
+      flex-grow: 1;
+      margin-right: 1rem;
+  }
+  
+  .challenge-info h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #4f46e5; /* Indigo */
+  }
+  .challenge-item.completed .challenge-info h3 {
+      color: #059669; /* Darker green */
+  }
+  
+  
+  .challenge-info p {
+    font-size: 0.95em;
+    color: #4b5563; /* Gray */
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .challenge-time-info {
+    font-size: 0.85em;
+    margin-bottom: 0.8rem; /* Space below time info */
+    font-weight: 500;
+}
+.challenge-time-info span {
+    display: inline-block; /* Or block if preferred */
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.time-upcoming {
+    color: #b45309; /* Amber text */
+    background-color: #fef3c7; /* Light yellow background */
+}
+.time-ending {
+    color: #1d4ed8; /* Blue text */
+    background-color: #dbeafe; /* Light blue background */
+}
+.time-expired {
+     color: #4b5563; /* Medium gray text */
+     background-color: #e5e7eb; /* Light gray background */
+}
+.time-ongoing {
+    color: #057a55; /* Dark Green text */
+    background-color: #def7ec; /* Light Green background */
+}
+/* --- End Time Info Styles --- */
+
+  .challenge-progress-display {
+      margin-top: 0.5rem;
+      font-size: 0.9em;
+  }
+  
+  .challenge-progress-bar {
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 0.3rem;
+  }
+  .challenge-progress-bar div {
+      height: 100%;
+      background: linear-gradient(to right, #818cf8, #6366f1); /* Indigo gradient */
+      border-radius: 5px;
+      transition: width 0.5s ease-in-out;
+  }
+  .challenge-item.completed .challenge-progress-bar div {
+       background: linear-gradient(to right, #6ee7b7, #34d399); /* Green gradient */
+  }
+  
+  .progress-text {
+      color: #6b7280;
+      font-weight: 500;
+  }
+  .challenge-item.completed .progress-text {
+      color: #065f46; /* Dark green */
+      font-weight: bold;
+  }
+  
+  
+  .challenge-rewards {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    white-space: nowrap; /* Prevent rewards wrapping */
+    margin-top: 0.2rem; /* Align slightly better with h3 */
+  }
+  
+  .reward {
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .xp-reward {
+    background-color: #fef3c7; /* Light yellow */
+    color: #b45309; /* Amber text */
+  }
+  
+  .badge-reward {
+    background-color: #e0e7ff; /* Light indigo */
+    color: #3730a3; /* Indigo text */
+  }
+  
+  .page-actions {
+      text-align: center;
+      margin-top: 2rem;
+  }

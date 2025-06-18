@@ -1,0 +1,205 @@
+.habit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 5px solid #7f9cf5; /* Default color, overridden by style prop */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    position: relative; /* Needed for absolute positioning of XP pop-up */
+    overflow: hidden; /* Prevent XP pop-up overflow if needed */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .habit-item.completed {
+    background-color: #f0fdf4; /* Light green background */
+    opacity: 0.7;
+  }
+  
+  .habit-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon, name, streak */
+  }
+  
+  .habit-icon {
+    font-size: 1.4em;
+  }
+  
+  .habit-name {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .habit-streak {
+    font-size: 0.9em;
+    background-color: #fef3c7; /* Light yellow */
+    color: #b45309; /* Amber text */
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px; /* Space from name */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for pop */
+    display: inline-block; /* Ensure transform works */
+  }
+
+  .habit-streak.streak-pop { /* Class to add temporarily */
+    animation: pop 0.4s ease-out forwards;
+  }
+
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); background-color: #fcd34d; } /* Brighter yellow pop */
+    100% { transform: scale(1); }
+  }
+  
+  .habit-actions {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .complete-button {
+    background-color: #667eea; /* Indigo */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Circle */
+    width: 32px;
+    height: 32px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1; /* Ensure '+'/'✓' are centered */
+    position: relative; /* Needed for potential pseudo-elements or contained animations */
+    overflow: hidden; /* Hide changing content during transition */
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Added color */
+  }
+  
+  .complete-button:hover:not(:disabled) {
+    background-color: #5a67d8; /* Darker Indigo */
+    transform: scale(1.1);
+  }
+  
+  .complete-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .complete-button.is-completed-button {
+    background-color: #34d399; /* Emerald Green */
+    transform: scale(1.05) rotate(360deg); /* Add rotation on complete */
+    transition: background-color 0.4s ease, transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Add bounce */
+ }
+   .complete-button.is-completed-button:hover:not(:disabled) {
+     background-color: #059669; /* Darker Emerald */
+   }
+  
+  
+  .error-text {
+    color: #ef4444; /* Red */
+    font-size: 0.8em;
+    margin-right: 10px;
+  }
+  
+  /* Optional preview styles */
+  .habit-gamification-preview {
+      font-size: 0.8em;
+      color: #666;
+      margin-left: auto; /* Push to the right */
+      padding-left: 15px;
+  }
+
+  .habit-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Add space between action buttons */
+  }
+  
+  /* Make buttons slightly smaller perhaps */
+  .edit-button,
+  .delete-button {
+      background-color: transparent;
+      border: none;
+      font-size: 1.1em; /* Adjust size */
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      line-height: 1;
+  }
+  .edit-button {
+      color: #4f46e5; /* Indigo */
+  }
+  .delete-button {
+      color: #ef4444; /* Red */
+  }
+  
+  .edit-button:hover:not([disabled]),
+  .delete-button:hover:not([disabled]) {
+      background-color: #eef2ff; /* Lighter background on hover */
+      transform: scale(1.1);
+  }
+  .delete-button:hover:not([disabled]) {
+      background-color: #fee2e2; /* Light red background */
+  }
+  
+  
+  .edit-button[disabled],
+  .delete-button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  /* Style for item while deleting (optional visual feedback) */
+  .habit-item.deleting {
+      opacity: 0.5;
+      background-color: #fee2e2; /* Light red background */
+      transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Adjust complete button margin if needed due to new buttons */
+  .complete-button {
+      margin-left: auto; /* Remove this if you had it
+      /* Buttons are now ordered by flexbox gap */
+  }
+
+  .xp-popup {
+    position: absolute;
+    bottom: 100%; /* Start just above the button container */
+    right: 5px; /* Align near the complete button */
+    background-color: rgba(254, 220, 10, 0.9); /* Yellowish pop */
+    color: #854d0e; /* Dark text */
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    white-space: nowrap;
+    pointer-events: none; /* Don't block clicks */
+    animation: flyAndFade 1.2s ease-out forwards;
+    z-index: 10;
+  }
+
+  @keyframes flyAndFade {
+    0% {
+      transform: translateY(0) scale(0.5);
+      opacity: 0;
+    }
+    20% {
+      transform: translateY(-15px) scale(1); /* Move up and scale in */
+      opacity: 1;
+    }
+    80% {
+      transform: translateY(-40px) scale(1); /* Hold */
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-60px) scale(0.8); /* Move further up and fade out */
+      opacity: 0;
+    }
+  }

@@ -1,0 +1,108 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+    padding: 2rem;
+    background-color: transparent; /* Very light gray background */
+    width: 100%;
+  }
+  
+  .auth-form {
+    background-color:var(--background-secondary);
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    color: var(--border-color);
+    max-width: 400px; /* Limit form width */
+    text-align: center;
+  }
+  
+  .auth-form h2 {
+    margin-bottom: 1.5rem;
+    color:var(--text-primary);
+    font-size: 1.8em;
+    color:var(--text-secondary);
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    color: white;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: white; /* Gray */
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db; /* Light Gray border */
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color:var(--text-on-accent);
+  }
+  
+  .form-group input:focus {
+     outline: none;
+     border-color: #6366f1; /* Indigo on focus */
+     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  }
+   .form-group input:disabled {
+     background-color: #f3f4f6;
+     cursor: not-allowed;
+   }
+  
+  
+  .auth-button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #6366f1; /* Indigo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+  }
+  
+  .auth-button:hover:not(:disabled) {
+    background-color: #4f46e5; /* Darker Indigo */
+  }
+   .auth-button:disabled {
+     background-color: #a5b4fc; /* Lighter indigo */
+     cursor: not-allowed;
+   }
+  
+  .error-message {
+    color: #ef4444; /* Red */
+    background-color: #fee2e2; /* Light red background */
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 0.9em;
+    border: 1px solid #fca5a5; /* Red border */
+  }
+  
+  .auth-switch {
+      margin-top: 1.5rem;
+      font-size: 0.9em;
+      color: var(--border-color) /* Medium Gray */
+  }
+   .auth-switch a {
+       color: #f0fb28; /* Indigo */
+       text-decoration: none;
+       font-weight: 500;
+   }
+   .auth-switch a:hover {
+       text-decoration: underline;
+   }

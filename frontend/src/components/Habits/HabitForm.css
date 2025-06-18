@@ -1,0 +1,184 @@
+/* src/components/Habits/HabitForm.css */
+.habit-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+  
+  .habit-form h2 {
+    text-align: center;
+    color: #4f46e5; /* Indigo */
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151; /* Gray */
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db; /* Light Gray border */
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .form-group textarea {
+      resize: vertical; /* Allow vertical resize */
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+     outline: none;
+     border-color: #6366f1; /* Indigo on focus */
+     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  }
+  .form-group input:disabled,
+  .form-group textarea:disabled,
+  .form-group select:disabled {
+     background-color: #f3f4f6;
+     cursor: not-allowed;
+   }
+  
+  .color-input {
+      width: 50px !important; /* Make color picker small */
+      height: 35px;
+      padding: 2px 4px !important;
+      cursor: pointer;
+      vertical-align: middle;
+  }
+  .icon-select {
+      width: 80px !important; /* Adjust as needed */
+      vertical-align: middle;
+      margin-right: 10px;
+  }
+  .icon-preview {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      font-size: 1.2em;
+      vertical-align: middle;
+      color: white; /* Assuming dark background */
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  }
+  
+  
+  .submit-button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #6366f1; /* Indigo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+  }
+  
+  .submit-button:hover:not(:disabled) {
+    background-color: #4f46e5; /* Darker Indigo */
+  }
+   .submit-button:disabled {
+     background-color: #a5b4fc; /* Lighter indigo */
+     cursor: not-allowed;
+   }
+  
+  .error-message {
+      color: #ef4444; /* Red */
+      background-color: #fee2e2; /* Light red background */
+      padding: 0.8rem;
+      border-radius: 4px;
+      border: 1px solid #fca5a5; /* Red border */
+      text-align: center;
+      margin-bottom: 1rem;
+  }
+
+  .frequency-details {
+    background-color: var(--background-primary); /* Slightly different bg */
+    padding: 1rem;
+    margin-top: -0.5rem; /* Pull up slightly below select */
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-top: none; /* Remove top border adjacent to select */
+    border-radius: 0 0 5px 5px;
+}
+ html.dark .frequency-details {
+     background-color: var(--background-secondary);
+     border-color: var(--border-color-accent);
+ }
+
+.frequency-details label {
+    font-weight: normal;
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.days-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.day-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-size: 0.9em;
+    color: var(--text-primary);
+}
+ html.dark .day-checkbox-label {
+     border-color: var(--border-color-accent);
+ }
+
+.day-checkbox-label input[type="checkbox"] {
+    margin-right: 6px;
+     accent-color: var(--text-accent); /* Style checkbox color */
+}
+
+.day-checkbox-label input[type="checkbox"]:checked + span {
+    /* Optional: Style text when checked */
+    /* font-weight: bold; */
+}
+.day-checkbox-label:has(input:checked) { /* Style label when checked */
+    background-color: var(--background-accent);
+    border-color: var(--text-accent);
+    color: var(--text-on-accent);
+}
+ html.dark .day-checkbox-label:has(input:checked) {
+      background-color: var(--text-accent);
+      color: var(--button-primary-text);
+      border-color: var(--text-accent);
+ }
+
+
+.frequency-input {
+    /* Style number inputs for target/interval */
+    width: 80px !important; /* Smaller input */
+    padding: 0.5rem 0.8rem !important;
+}

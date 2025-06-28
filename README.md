@@ -53,7 +53,7 @@ cd Job_search_platform
 # Install backend dependencies
 cd backend
 npm install
-npm run dev
+npm start
 
 # Install frontend dependencies
 cd ../frontend
